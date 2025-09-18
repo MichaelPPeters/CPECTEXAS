@@ -35,9 +35,14 @@ export default function RootLayout({
       </head>
       <body>
         <div className="fixed inset-0 z-0 bg-black">
-          <div className="hidden md:block">
-            <Plasma color="#00BFFF" speed={0.6} direction="forward" scale={1.2} opacity={0.3} mouseInteractive={true} />
-          </div>
+          <Plasma 
+            color="#00BFFF" 
+            speed={0.4} 
+            direction="forward" 
+            scale={1.0} 
+            opacity={0.2} 
+            mouseInteractive={false} 
+          />
         </div>
         <div className="relative z-10">{children}</div>
       </body>
