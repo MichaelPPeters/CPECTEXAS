@@ -66,10 +66,10 @@ export function TechServices() {
     <section id="services" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold font-space-grotesk mb-6">
-            What We <span className="tech-gradient bg-clip-text text-transparent">Deliver</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+            What We <span className="text-blue-400">Deliver</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty">
             We solve the tech problems that slow you down. From fast support to bulletproof systems, 
             we focus on outcomes that keep your team productive and your business moving forward.
           </p>
@@ -77,37 +77,35 @@ export function TechServices() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <Card
+            <div
               key={index}
-              className="tech-glass border-primary/20 hover:border-primary/40 transition-all duration-300 group"
+              className="glass-border rounded-xl p-6 hover:glass-border-enhanced transition-all duration-300 group"
             >
-              <CardHeader>
+              <div className="text-center">
                 <div
-                  className={`w-12 h-12 rounded-lg bg-gradient-to-r ${service.color} flex items-center justify-center mb-4`}
+                  className={`w-12 h-12 rounded-lg bg-gradient-to-r ${service.color} flex items-center justify-center mb-4 mx-auto`}
                 >
                   <service.icon className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="font-space-grotesk text-xl">{service.title}</CardTitle>
-                <CardDescription className="text-muted-foreground">{service.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 mb-6">
+                <h3 className="text-xl font-semibold mb-2 text-white">{service.title}</h3>
+                <p className="text-gray-300 mb-4 text-sm">{service.description}</p>
+                <ul className="space-y-2 mb-6 text-left">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm">
-                      <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <li key={featureIndex} className="flex items-center text-sm text-gray-400">
+                      <CheckCircle className="h-4 w-4 text-blue-400 mr-2 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
                 </ul>
                 <Button
                   variant="outline"
-                  className="w-full border-primary text-primary hover:bg-primary/10 group-hover:bg-primary group-hover:text-white transition-all bg-transparent"
+                  className="w-full border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition-all bg-transparent"
                 >
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </div>

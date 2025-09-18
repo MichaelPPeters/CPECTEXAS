@@ -16,7 +16,7 @@ export default function Page() {
     "@id": "https://tctechnologies.com/",
     name: "Technology Central",
     description:
-      "Leading technology company in Fort Worth providing innovative software solutions, cloud services, and digital transformation.",
+      "Fort Worth's leading technology partner, delivering fast support, smooth onboarding, and reliable systems that keep your team productive.",
     url: "https://tctechnologies.com/",
     address: {
       "@type": "PostalAddress",
@@ -32,7 +32,7 @@ export default function Page() {
 
   return (
     <>
-      <main className="min-h-[100dvh] text-foreground">
+      <main className="min-h-[100dvh] text-white">
         <TechHeader />
         <TechHero />
         <TechServices />

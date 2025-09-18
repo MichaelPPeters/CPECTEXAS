@@ -1,69 +1,119 @@
 "use client"
 
-import { useState } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { Menu, Briefcase, Tag, HelpCircle, FileText, Info } from "lucide-react"
 
 export function TechHeader() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const links = [
+    { href: "#services", label: "Services", icon: Briefcase },
+    { href: "#about", label: "About", icon: Info },
+    { href: "#contact", label: "Contact", icon: HelpCircle },
+  ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 tech-glass border-b border-border/50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <Image src="/tc-logo.png" alt="Technology Central" width={40} height={40} className="rounded-lg" />
-            <span className="font-bold text-xl font-space-grotesk">Technology Central</span>
-          </div>
+    <header className="sticky top-0 z-50 p-4">
+      <div className="container mx-auto max-w-4xl">
+        <div className="flex h-14 items-center justify-between px-6 liquid-glass-header rounded-full">
+          {/* Brand Logo */}
+          <Link href="/" className="flex items-center gap-1.5">
+            <Image
+              src="/tc-logo.png"
+              alt="Technology Central logo"
+              width={20}
+              height={20}
+              className="h-5 w-5 rounded"
+            />
+            <span className="font-semibold tracking-wide text-white">Technology Central</span>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-foreground hover:text-primary transition-colors">
-              Services
-            </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">
-              About
-            </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">
-              Contact
-            </a>
-            <ThemeToggle />
-            <Button asChild className="tech-gradient text-white hover:opacity-90 transition-opacity">
-              <a href="#contact">Get Free Consultation</a>
-            </Button>
+          {/* Desktop Nav */}
+          <nav className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="hover:text-blue-300 transition-colors"
+              >
+                {l.label}
+              </Link>
+            ))}
           </nav>
 
-          {/* Mobile Menu Button and Theme Toggle */}
-          <div className="md:hidden flex items-center space-x-2">
-            <ThemeToggle />
-            <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+          {/* Desktop CTA */}
+          <div className="hidden md:flex">
+            <Button
+              asChild
+              className="bg-blue-500 text-white font-medium rounded-lg px-6 py-2.5
+                         hover:bg-blue-400 hover:shadow-md hover:scale-[1.02]
+                         transition-all"
+            >
+              <Link href="#contact">Get Free Consultation</Link>
+            </Button>
+          </div>
+
+          {/* Mobile Nav */}
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="border-gray-700 bg-gray-900/80 text-gray-200 hover:bg-gray-800"
+                >
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="liquid-glass border-gray-800 p-0 w-64 flex flex-col"
+              >
+                {/* Brand Header */}
+                <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-800">
+                  <Image
+                    src="/tc-logo.png"
+                    alt="Technology Central logo"
+                    width={24}
+                    height={24}
+                    className="h-6 w-6 rounded"
+                  />
+                  <span className="font-semibold tracking-wide text-white text-lg">Technology Central</span>
+                </div>
+
+                {/* Nav Links */}
+                <nav className="flex flex-col gap-1 mt-2 text-gray-200">
+                  {links.map((l) => (
+                    <Link
+                      key={l.href}
+                      href={l.href}
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 hover:text-blue-300 transition-colors"
+                    >
+                      <span className="inline-flex items-center justify-center w-5 h-5 text-gray-400">
+                        <l.icon className="h-4 w-4" />
+                      </span>
+                      <span className="text-sm">{l.label}</span>
+                    </Link>
+                  ))}
+                </nav>
+
+                {/* CTA Button at Bottom */}
+                <div className="mt-auto border-t border-gray-800 p-4">
+                  <Button
+                    asChild
+                    className="w-full bg-blue-500 text-white font-medium rounded-lg px-6 py-2.5
+                               hover:bg-blue-400 hover:shadow-md hover:scale-[1.02]
+                               transition-all"
+                  >
+                    <Link href="#contact">Get Free Consultation</Link>
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50">
-            <nav className="flex flex-col space-y-4">
-              <a href="#services" className="text-foreground hover:text-primary transition-colors">
-                Services
-              </a>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors">
-                About
-              </a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors">
-                Contact
-              </a>
-              <Button asChild className="tech-gradient text-white w-full">
-                <a href="#contact">Get Free Consultation</a>
-              </Button>
-            </nav>
-          </div>
-        )}
       </div>
     </header>
   )

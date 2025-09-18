@@ -22,29 +22,29 @@ export function TechAbout() {
   ]
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold font-space-grotesk mb-6">
-              Why <span className="tech-gradient bg-clip-text text-transparent">Choose Us</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+              Why <span className="text-blue-400">Choose Us</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-6 text-pretty">
+            <p className="text-lg text-gray-300 mb-6 text-pretty">
               We're Fort Worth's technology partner focused on outcomes, not just technology. We solve the problems 
               that slow you down: from "one call and it's fixed" support to bulletproof email migrations that 
               keep your business running smoothly.
             </p>
-            <p className="text-lg text-muted-foreground mb-8 text-pretty">
+            <p className="text-lg text-gray-300 mb-8 text-pretty">
               Our clients get day-1 ready employee setups, zero-loss email migrations, and workflow automations 
               that keep deadlines from slipping through the cracks. We focus on the results that matter to your business.
             </p>
 
             {/* Client Outcomes */}
             <div className="mb-8">
-              <h3 className="text-xl font-semibold font-space-grotesk mb-4">Sample Outcomes Clients Get</h3>
+              <h3 className="text-xl font-semibold mb-4 text-white">Sample Outcomes Clients Get</h3>
               <div className="flex flex-wrap gap-2">
                 {outcomes.map((outcome, index) => (
-                  <Badge key={index} variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                  <Badge key={index} variant="secondary" className="bg-blue-500/10 text-blue-400 border-blue-500/20">
                     {outcome}
                   </Badge>
                 ))}
@@ -54,15 +54,13 @@ export function TechAbout() {
 
           <div className="grid grid-cols-2 gap-6">
             {stats.map((stat, index) => (
-              <Card key={index} className="tech-glass border-primary/20 text-center">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 tech-gradient rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="text-2xl font-bold font-space-grotesk text-primary mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </CardContent>
-              </Card>
+              <div key={index} className="glass-border text-center p-6 rounded-xl">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="h-6 w-6 text-white" />
+                </div>
+                <div className="text-2xl font-bold text-blue-400 mb-1">{stat.value}</div>
+                <div className="text-sm text-gray-300">{stat.label}</div>
+              </div>
             ))}
           </div>
         </div>
