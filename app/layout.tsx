@@ -47,7 +47,9 @@ export default function RootLayout({
       <body className="font-sans">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="fixed inset-0 z-0 bg-gradient-to-br from-background via-muted/20 to-background">
-            <Plasma color="#00BFFF" speed={0.6} direction="forward" scale={1.2} opacity={0.3} mouseInteractive={true} />
+            <div className="hidden md:block">
+              <Plasma color="#00BFFF" speed={0.6} direction="forward" scale={1.2} opacity={0.3} mouseInteractive={true} />
+            </div>
           </div>
           <div className="relative z-10">{children}</div>
         </ThemeProvider>
