@@ -1,0 +1,218 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color system to match TC logo blue-white gradient */
+  --background: #ffffff;
+  --foreground: #000000;
+  --card: #f0f4f8;
+  --card-foreground: #374151;
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  --primary: #00bfff; /* Turquoise-blue from logo */
+  --primary-foreground: #ffffff;
+  --secondary: #1e90ff; /* Deeper blue accent */
+  --secondary-foreground: #ffffff;
+  --muted: #e1e8ed;
+  --muted-foreground: #374151;
+  --accent: #1e90ff;
+  --accent-foreground: #ffffff;
+  --destructive: #ff4c4c;
+  --destructive-foreground: #ffffff;
+  --border: #e1e8ed;
+  --input: #f0f4f8;
+  --ring: rgba(30, 144, 255, 0.5);
+  --chart-1: #00bfff;
+  --chart-2: #1e90ff;
+  --chart-3: #e1e8ed;
+  --chart-4: #f0f4f8;
+  --chart-5: #374151;
+  --radius: 0.5rem;
+  --sidebar: #f0f4f8;
+  --sidebar-foreground: #374151;
+  --sidebar-primary: #00bfff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1e90ff;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e1e8ed;
+  --sidebar-ring: rgba(30, 144, 255, 0.5);
+}
+
+.dark {
+  /* Updated dark mode colors to complement the blue gradient theme */
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #00bfff;
+  --primary-foreground: #ffffff;
+  --secondary: #334155;
+  --secondary-foreground: #f8fafc;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: #1e90ff;
+  --accent-foreground: #ffffff;
+  --destructive: #ff4c4c;
+  --destructive-foreground: #ffffff;
+  --border: #334155;
+  --input: #334155;
+  --ring: rgba(0, 191, 255, 0.5);
+  --chart-1: #00bfff;
+  --chart-2: #1e90ff;
+  --chart-3: #334155;
+  --chart-4: #475569;
+  --chart-5: #64748b;
+  --radius: 0.5rem;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #00bfff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1e90ff;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #334155;
+  --sidebar-ring: rgba(0, 191, 255, 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Updated glass effects to use the new blue gradient theme */
+.tech-glass {
+  background: linear-gradient(135deg, rgba(0, 191, 255, 0.1) 0%, rgba(30, 144, 255, 0.05) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 191, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 191, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.tech-glass-enhanced {
+  background: linear-gradient(135deg, rgba(0, 191, 255, 0.15) 0%, rgba(30, 144, 255, 0.08) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(0, 191, 255, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 191, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.tech-gradient {
+  background: linear-gradient(135deg, #00bfff 0%, #1e90ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.tech-gradient-subtle {
+  background: linear-gradient(135deg, rgba(0, 191, 255, 0.1) 0%, rgba(30, 144, 255, 0.05) 100%);
+}
+
+/* Tech-focused animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-blue {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(0, 191, 255, 0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-blue {
+  animation: pulse-blue 2s infinite;
+}
+
+/* Hide v0 preview badge */
+a[aria-label="Built with v0"],
+a[title="Built with v0"],
+a[href*="v0.dev"].v0-badge,
+a[data-built-with-v0],
+#built-with-v0,
+.v0-built-with {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+[aria-label*="v0" i],
+[title*="v0" i],
+[id*="v0" i],
+[class*="v0" i],
+a[href*="v0.dev"],
+a[href*="v0.sh"],
+a[href*="v0.app"],
+a[href*="v0.dev"] *,
+.v0,
+.v0-badge,
+.v0-sticky,
+.v0-watermark,
+.v0-floating-badge,
+.v0-built-with,
+.built-with-v0,
+.built_with_v0,
+[data-built-with="v0"],
+[data-built-with*="v0" i] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
