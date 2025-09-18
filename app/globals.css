@@ -142,9 +142,11 @@
 
 .liquid-glass-header {
   background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(8px) saturate(120%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  will-change: auto;
+  transform: translateZ(0);
 }
 
 /* Apple-style glass border utilities - Clean and minimal */
@@ -205,6 +207,26 @@
 
 .animate-float:nth-child(3) {
   animation-delay: 4s;
+}
+
+/* Mobile gradient animation - smooth and flicker-free */
+@keyframes gradient-mobile {
+  0%, 100% {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(30, 64, 175, 0.1) 50%, rgba(14, 116, 144, 0.2) 100%);
+  }
+  25% {
+    background: linear-gradient(135deg, rgba(14, 116, 144, 0.2) 0%, rgba(30, 58, 138, 0.1) 50%, rgba(30, 64, 175, 0.2) 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.2) 0%, rgba(14, 116, 144, 0.1) 50%, rgba(30, 58, 138, 0.2) 100%);
+  }
+  75% {
+    background: linear-gradient(135deg, rgba(14, 116, 144, 0.2) 0%, rgba(30, 64, 175, 0.1) 50%, rgba(30, 58, 138, 0.2) 100%);
+  }
+}
+
+.animate-gradient-mobile {
+  animation: gradient-mobile 8s ease-in-out infinite;
 }
 
 /* Updated glass effects to use the new blue gradient theme */
