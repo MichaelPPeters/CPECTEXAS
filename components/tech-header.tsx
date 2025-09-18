@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -7,11 +8,17 @@ import Image from "next/image"
 import { Menu, Briefcase, Tag, HelpCircle, FileText, Info } from "lucide-react"
 
 export function TechHeader() {
+  const [isOpen, setIsOpen] = useState(false)
+  
   const links = [
     { href: "#services", label: "Services", icon: Briefcase },
     { href: "#about", label: "About", icon: Info },
     { href: "#contact", label: "Contact", icon: HelpCircle },
   ]
+
+  const handleLinkClick = () => {
+    setIsOpen(false)
+  }
 
   return (
     <header className="sticky top-0 z-50 p-4">
@@ -56,7 +63,7 @@ export function TechHeader() {
 
           {/* Mobile Nav */}
           <div className="md:hidden">
-            <Sheet>
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button
                   variant="outline"
@@ -89,6 +96,7 @@ export function TechHeader() {
                     <Link
                       key={l.href}
                       href={l.href}
+                      onClick={handleLinkClick}
                       className="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 hover:text-blue-300 transition-colors"
                     >
                       <span className="inline-flex items-center justify-center w-5 h-5 text-gray-400">
@@ -107,7 +115,7 @@ export function TechHeader() {
                                hover:bg-blue-400 hover:shadow-md hover:scale-[1.02]
                                transition-all"
                   >
-                    <Link href="#contact">Get Free Consultation</Link>
+                    <Link href="#contact" onClick={handleLinkClick}>Get Free Consultation</Link>
                   </Button>
                 </div>
               </SheetContent>
