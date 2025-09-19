@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react"
 
 export function TechContact() {
   const [formData, setFormData] = useState({
@@ -17,10 +17,66 @@ export function TechContact() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [errors, setErrors] = useState<Record<string, string>>({})
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {}
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required"
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required"
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address"
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required"
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters long"
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+    
+    if (!validateForm()) {
+      return
+    }
+
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      // Simulate API call - replace with actual endpoint
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({ name: "", email: "", company: "", message: "" })
+        setErrors({})
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -91,6 +147,21 @@ export function TechContact() {
                 <p className="text-gray-300">Tell us about your tech challenges and we'll show you how to solve them. We'll get back to you within 24 hours.</p>
               </div>
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className="flex items-center gap-2 p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400">
+                    <CheckCircle className="h-5 w-5" />
+                    <span>Thank you! We'll get back to you within 24 hours.</span>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="flex items-center gap-2 p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400">
+                    <AlertCircle className="h-5 w-5" />
+                    <span>Something went wrong. Please try again or contact us directly.</span>
+                  </div>
+                )}
+
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2 text-white">
@@ -101,9 +172,13 @@ export function TechContact() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      required
-                      className="border-gray-600 bg-gray-800 text-white focus:border-blue-500"
+                      className={`border-gray-600 bg-gray-800 text-white focus:border-blue-500 ${
+                        errors.name ? 'border-red-500 focus:border-red-500' : ''
+                      }`}
                     />
+                    {errors.name && (
+                      <p className="text-red-400 text-sm mt-1">{errors.name}</p>
+                    )}
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2 text-white">
@@ -115,9 +190,13 @@ export function TechContact() {
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      required
-                      className="border-gray-600 bg-gray-800 text-white focus:border-blue-500"
+                      className={`border-gray-600 bg-gray-800 text-white focus:border-blue-500 ${
+                        errors.email ? 'border-red-500 focus:border-red-500' : ''
+                      }`}
                     />
+                    {errors.email && (
+                      <p className="text-red-400 text-sm mt-1">{errors.email}</p>
+                    )}
                   </div>
                 </div>
 
@@ -143,16 +222,33 @@ export function TechContact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    required
                     rows={5}
-                    className="border-gray-600 bg-gray-800 text-white focus:border-blue-500"
+                    className={`border-gray-600 bg-gray-800 text-white focus:border-blue-500 ${
+                      errors.message ? 'border-red-500 focus:border-red-500' : ''
+                    }`}
                     placeholder="Tell us about your tech challenges, current pain points, and what outcomes you need..."
                   />
+                  {errors.message && (
+                    <p className="text-red-400 text-sm mt-1">{errors.message}</p>
+                  )}
                 </div>
 
-                <Button type="submit" className="w-full bg-blue-500 text-white hover:bg-blue-400 transition-all">
-                  Get My Free Consultation
-                  <Send className="ml-2 h-4 w-4" />
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-500 text-white hover:bg-blue-400 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Get My Free Consultation
+                      <Send className="ml-2 h-4 w-4" />
+                    </>
+                  )}
                 </Button>
               </form>
             </div>
