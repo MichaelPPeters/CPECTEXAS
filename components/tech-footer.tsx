@@ -42,7 +42,7 @@ export function TechFooter() {
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>(817) 555-CPEC</span>
+                <span>(661) 714-1593</span>
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />

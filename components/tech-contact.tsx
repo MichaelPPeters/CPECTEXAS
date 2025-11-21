@@ -121,7 +121,7 @@ export function TechContact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-white">Call Us</h3>
-                  <p className="text-gray-300">(817) 555-CPEC</p>
+                  <p className="text-gray-300">(661) 714-1593</p>
                 </div>
               </div>
             </div>
