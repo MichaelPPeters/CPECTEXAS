@@ -8,9 +8,15 @@ export function TechFooter() {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <Image src="/images/CPEC LOGO.png" alt="CPEC Texas" width={48} height={48} className="h-12 w-12" />
-              <span className="font-bold text-xl text-white">CPEC Texas</span>
+            <div className="flex items-center space-x-4 mb-4">
+              <Image 
+                src="/images/CPEC LOGO.png" 
+                alt="CPEC Texas" 
+                width={64} 
+                height={64} 
+                className="h-16 w-16"
+              />
+              <span className="font-bold text-2xl text-white">CPEC Texas</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md text-pretty">
               CounterPoint Electrical Consulting Texas - Professional electrical estimating services for contractors 

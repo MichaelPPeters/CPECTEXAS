@@ -25,15 +25,15 @@ export function TechHeader() {
       <div className="container mx-auto max-w-4xl">
         <div className="flex h-14 items-center justify-between px-6 liquid-glass-header rounded-full">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2.5">
             <Image
               src="/images/CPEC LOGO.png"
               alt="CPEC Texas logo"
-              width={40}
-              height={40}
-              className="h-10 w-10"
+              width={56}
+              height={56}
+              className="h-12 w-12 sm:h-14 sm:w-14"
             />
-            <span className="font-semibold tracking-wide text-white">CPEC Texas</span>
+            <span className="font-semibold tracking-wide text-white text-base sm:text-lg">CPEC Texas</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -79,15 +79,15 @@ export function TechHeader() {
                 className="liquid-glass border-gray-800 p-0 w-64 flex flex-col"
               >
                 {/* Brand Header */}
-                <div className="flex items-center gap-2 px-4 py-4 border-b border-gray-800">
+                <div className="flex items-center gap-3 px-4 py-4 border-b border-gray-800">
                   <Image
                     src="/images/CPEC LOGO.png"
                     alt="CPEC Texas logo"
-                    width={48}
-                    height={48}
-                    className="h-12 w-12"
+                    width={64}
+                    height={64}
+                    className="h-16 w-16"
                   />
-                  <span className="font-semibold tracking-wide text-white text-lg">CPEC Texas</span>
+                  <span className="font-semibold tracking-wide text-white text-xl">CPEC Texas</span>
                 </div>
 
                 {/* Nav Links */}

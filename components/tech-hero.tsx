@@ -15,9 +15,15 @@ export function TechHero() {
     <section className="relative isolate overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center py-14 sm:py-20">
-          <div className="mb-5 flex items-center gap-3">
-            <Image src="/images/CPEC LOGO.png" alt="CPEC Texas logo" width={64} height={64} className="h-16 w-16" />
-            <p className="text-sm uppercase tracking-[0.25em] text-amber-300/80">CounterPoint Electrical</p>
+          <div className="mb-8 flex flex-col items-center gap-4">
+            <Image 
+              src="/images/CPEC LOGO.png" 
+              alt="CPEC Texas logo" 
+              width={180} 
+              height={180} 
+              className="h-32 w-32 sm:h-40 sm:w-40 md:h-44 md:w-44 drop-shadow-[0_0_15px_rgba(245,158,11,0.3)]" 
+            />
+            <p className="text-sm uppercase tracking-[0.25em] text-amber-300/80 text-center">CounterPoint Electrical</p>
           </div>
           <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
             <span className="block">FORT WORTH'S</span>
