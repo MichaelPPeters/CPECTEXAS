@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react"
+import { ProtectedPhone } from "@/components/protected-phone"
 
 export function TechContact() {
   const [formData, setFormData] = useState({
@@ -121,7 +122,7 @@ export function TechContact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-white">Call Us</h3>
-                  <p className="text-gray-300">(661) 714-1593</p>
+                  <ProtectedPhone className="text-gray-300" />
                 </div>
               </div>
             </div>

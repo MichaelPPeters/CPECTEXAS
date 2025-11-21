@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import { Mail, Phone, MapPin, Linkedin, Facebook } from "lucide-react"
+import { ProtectedPhone } from "@/components/protected-phone"
 
 export function TechFooter() {
   return (
@@ -42,7 +45,7 @@ export function TechFooter() {
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>(661) 714-1593</span>
+                <ProtectedPhone />
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
