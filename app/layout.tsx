@@ -7,10 +7,10 @@ import Plasma from "@/components/plasma"
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
-  title: "Technology Central | Fort Worth Technology Solutions",
+  title: "CPEC Texas | Professional Electrical Estimating Services in Fort Worth",
   description:
-    "Fort Worth's leading technology partner, delivering fast support, smooth onboarding, and reliable systems that keep your team productive.",
-  generator: "v0.app",
+    "CounterPoint Electrical Consulting Texas provides accurate electrical estimating, takeoffs, and bid preparation services for electrical contractors in Fort Worth and throughout Texas.",
+  keywords: "electrical estimating, Fort Worth electrician, cost estimates, bid preparation, electrical takeoffs, Texas electrical contractors",
 }
 
 export default function RootLayout({
@@ -36,11 +36,11 @@ export default function RootLayout({
       <body>
         <div className="fixed inset-0 z-0 bg-black">
           <Plasma 
-            color="#00BFFF" 
+            color="#F59E0B" 
             speed={0.4} 
             direction="forward" 
             scale={1.0} 
-            opacity={0.2} 
+            opacity={0.15} 
             mouseInteractive={false} 
           />
         </div>

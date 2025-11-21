@@ -1,64 +1,64 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Users, Mail, FolderOpen, Wifi, Rocket, Zap, BarChart, Shield, ArrowRight, CheckCircle } from "lucide-react"
+import { Calculator, FileText, ClipboardList, Ruler, DollarSign, Zap, Building2, TrendingUp, ArrowRight, CheckCircle } from "lucide-react"
 
 export function TechServices() {
   const services = [
     {
-      icon: Users,
-      title: "Fast Support & Smooth Onboarding",
-      description: "New hires set up in under a day: email, devices, shared folders, and apps—ready to work on Day 1.",
-      features: ["Day-1 ready employee setup", "One call and it's fixed help desk", "Printer and audio support", "Computer glitch resolution"],
-      color: "from-blue-500 to-cyan-500",
+      icon: Calculator,
+      title: "Complete Material Takeoffs",
+      description: "Detailed material counts from plans and specifications—wire, conduit, devices, panels, and fixtures.",
+      features: ["Conduit & wire calculations", "Panel & breaker schedules", "Device & fixture counts", "Equipment specifications"],
+      color: "from-amber-500 to-orange-500",
     },
     {
-      icon: Mail,
-      title: "Reliable Email & Domain Setup",
-      description: "Clean cutovers to professional work email on your domain—no downtime, no bounce backs.",
-      features: ["Zero-loss email migrations", "Bulletproof deliverability", "SPF/DKIM/DMARC setup", "Professional domain management"],
-      color: "from-cyan-500 to-blue-500",
+      icon: Ruler,
+      title: "Labor Cost Estimation",
+      description: "Accurate labor hour calculations based on project scope, complexity, and current labor rates.",
+      features: ["Man-hour calculations", "Labor rate analysis", "Productivity factors", "Crew size optimization"],
+      color: "from-orange-500 to-amber-500",
     },
     {
-      icon: FolderOpen,
-      title: "Simple, Secure Collaboration",
-      description: "Shared drives and team spaces that 'just work,' so everyone finds the right file the first time.",
-      features: ["Shared drives that work", "Clear access rules", "File organization", "Team collaboration tools"],
-      color: "from-blue-600 to-cyan-400",
+      icon: DollarSign,
+      title: "Competitive Pricing Analysis",
+      description: "Market-based pricing with real-time material costs to keep your bids competitive and profitable.",
+      features: ["Current material pricing", "Supplier cost comparison", "Markup optimization", "Profit margin analysis"],
+      color: "from-amber-600 to-orange-400",
     },
     {
-      icon: Wifi,
-      title: "Network & Device Readiness",
-      description: "Office Wi-Fi and workstations tuned for speed and stability—less waiting, more doing.",
-      features: ["Optimized office Wi-Fi", "Workstation tuning", "Remote support", "Network stability"],
-      color: "from-cyan-400 to-blue-600",
+      icon: FileText,
+      title: "Professional Bid Packages",
+      description: "Comprehensive, organized bid documents that showcase your professionalism and win projects.",
+      features: ["Detailed scope of work", "Itemized pricing sheets", "Exclusions & assumptions", "Professional formatting"],
+      color: "from-orange-400 to-amber-600",
     },
     {
-      icon: Rocket,
-      title: "Launching Apps Without the Headache",
-      description: "Get your internal tools or portals live quickly—deployed, versioned, and easy to update.",
-      features: ["Quick app deployment", "Version control", "Easy updates", "Staging to production"],
-      color: "from-blue-500 to-cyan-500",
+      icon: Building2,
+      title: "Commercial & Industrial Projects",
+      description: "Expertise in large-scale commercial, industrial, and institutional electrical systems.",
+      features: ["Office buildings", "Retail & hospitality", "Industrial facilities", "Schools & healthcare"],
+      color: "from-amber-500 to-orange-500",
+    },
+    {
+      icon: ClipboardList,
+      title: "Plan Review & Analysis",
+      description: "Thorough review of plans and specs to identify potential issues and value engineering opportunities.",
+      features: ["Code compliance review", "Constructability analysis", "Value engineering", "RFI preparation"],
+      color: "from-orange-500 to-amber-500",
     },
     {
       icon: Zap,
-      title: "Workflow Automation",
-      description: "Automatic reminders and alerts tied to due dates and milestones—your team stays ahead of deadlines.",
-      features: ["Auto-reminder workflows", "Inbox-to-task automation", "Deadline tracking", "Weekly summaries"],
-      color: "from-cyan-500 to-blue-500",
+      title: "Fast Turnaround",
+      description: "Quick, accurate estimates when you need them—from simple projects to complex bid packages.",
+      features: ["24-48 hour turnaround", "Rush service available", "Preliminary budgets", "Design-build estimates"],
+      color: "from-amber-500 to-orange-500",
     },
     {
-      icon: BarChart,
-      title: "Data & Conversion Improvements",
-      description: "Track the right events across your site/app to see what's working (and what's not).",
-      features: ["Event tracking setup", "A/B testing", "Conversion optimization", "Performance analytics"],
-      color: "from-blue-500 to-cyan-500",
-    },
-    {
-      icon: Shield,
-      title: "Practical Security Hygiene",
-      description: "MFA and least-privilege access set up without killing productivity.",
-      features: ["MFA setup", "Least-privilege access", "Phishing-resistant email", "Security training"],
-      color: "from-cyan-500 to-blue-500",
+      icon: TrendingUp,
+      title: "Change Order Support",
+      description: "Quick pricing for change orders and additions to keep your projects moving and profitable.",
+      features: ["Change order pricing", "Additional work quotes", "Project modifications", "Value analysis"],
+      color: "from-orange-500 to-amber-500",
     },
   ]
 
@@ -67,11 +67,11 @@ export function TechServices() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-            What We <span className="text-blue-400">Deliver</span>
+            Our Electrical <span className="text-amber-400">Estimating Services</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto text-pretty">
-            We solve the tech problems that slow you down. From fast support to bulletproof systems, 
-            we focus on outcomes that keep your team productive and your business moving forward.
+            From material takeoffs to complete bid packages, we provide accurate electrical estimates 
+            that help you win more work and maximize profitability on every project.
           </p>
         </div>
 
@@ -92,14 +92,14 @@ export function TechServices() {
                 <ul className="space-y-2 mb-6 text-left">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm text-gray-400">
-                      <CheckCircle className="h-4 w-4 text-blue-400 mr-2 flex-shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-amber-400 mr-2 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
                 </ul>
                 <Button
                   variant="outline"
-                  className="w-full border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition-all bg-transparent"
+                  className="w-full border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-black transition-all bg-transparent"
                 >
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4" />

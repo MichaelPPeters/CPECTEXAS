@@ -28,12 +28,12 @@ export function TechHeader() {
           <Link href="/" className="flex items-center gap-1.5">
             <Image
               src="/tc-logo.png"
-              alt="Technology Central logo"
+              alt="CPEC Texas logo"
               width={20}
               height={20}
               className="h-5 w-5 rounded"
             />
-            <span className="font-semibold tracking-wide text-white">Technology Central</span>
+            <span className="font-semibold tracking-wide text-white">CPEC Texas</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -42,7 +42,7 @@ export function TechHeader() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="hover:text-blue-300 transition-colors"
+                className="hover:text-amber-300 transition-colors"
               >
                 {l.label}
               </Link>
@@ -53,11 +53,11 @@ export function TechHeader() {
           <div className="hidden md:flex">
             <Button
               asChild
-              className="bg-blue-500 text-white font-medium rounded-lg px-6 py-2.5
-                         hover:bg-blue-400 hover:shadow-md hover:scale-[1.02]
+              className="bg-amber-500 text-black font-medium rounded-lg px-6 py-2.5
+                         hover:bg-amber-400 hover:shadow-md hover:scale-[1.02]
                          transition-all"
             >
-              <Link href="#contact">Get Free Consultation</Link>
+              <Link href="#contact">Get Free Estimate</Link>
             </Button>
           </div>
 
@@ -82,12 +82,12 @@ export function TechHeader() {
                 <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-800">
                   <Image
                     src="/tc-logo.png"
-                    alt="Technology Central logo"
+                    alt="CPEC Texas logo"
                     width={24}
                     height={24}
                     className="h-6 w-6 rounded"
                   />
-                  <span className="font-semibold tracking-wide text-white text-lg">Technology Central</span>
+                  <span className="font-semibold tracking-wide text-white text-lg">CPEC Texas</span>
                 </div>
 
                 {/* Nav Links */}
@@ -97,7 +97,7 @@ export function TechHeader() {
                       key={l.href}
                       href={l.href}
                       onClick={handleLinkClick}
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 hover:text-blue-300 transition-colors"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 hover:text-amber-300 transition-colors"
                     >
                       <span className="inline-flex items-center justify-center w-5 h-5 text-gray-400">
                         <l.icon className="h-4 w-4" />
@@ -111,11 +111,11 @@ export function TechHeader() {
                 <div className="mt-auto border-t border-gray-800 p-4">
                   <Button
                     asChild
-                    className="w-full bg-blue-500 text-white font-medium rounded-lg px-6 py-2.5
-                               hover:bg-blue-400 hover:shadow-md hover:scale-[1.02]
+                    className="w-full bg-amber-500 text-black font-medium rounded-lg px-6 py-2.5
+                               hover:bg-amber-400 hover:shadow-md hover:scale-[1.02]
                                transition-all"
                   >
-                    <Link href="#contact" onClick={handleLinkClick}>Get Free Consultation</Link>
+                    <Link href="#contact" onClick={handleLinkClick}>Get Free Estimate</Link>
                   </Button>
                 </div>
               </SheetContent>

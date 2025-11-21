@@ -12,22 +12,25 @@ export const dynamic = "force-static"
 export default function Page() {
   const companyStructuredData = {
     "@context": "https://schema.org",
-    "@type": "TechnologyCompany",
-    "@id": "https://tctechnologies.com/",
-    name: "Technology Central",
+    "@type": "ProfessionalService",
+    "@id": "https://cpectexas.com/",
+    name: "CounterPoint Electrical Consulting Texas",
+    alternateName: "CPEC Texas",
     description:
-      "Fort Worth's leading technology partner, delivering fast support, smooth onboarding, and reliable systems that keep your team productive.",
-    url: "https://tctechnologies.com/",
+      "Professional electrical estimating services in Fort Worth, Texas. Accurate takeoffs, detailed cost estimates, and competitive bid preparation for electrical contractors.",
+    url: "https://cpectexas.com/",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Fort Worth",
       addressRegion: "TX",
       addressCountry: "US",
     },
-    foundingLocation: {
-      "@type": "Place",
-      name: "Fort Worth, Texas",
+    areaServed: {
+      "@type": "State",
+      name: "Texas",
     },
+    priceRange: "$$",
+    knowsAbout: ["Electrical Estimating", "Cost Analysis", "Bid Preparation", "Material Takeoffs", "Labor Calculations"],
   }
 
   return (

@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { Zap, Mail, Shield } from "lucide-react"
+import { Calculator, FileText, TrendingUp } from "lucide-react"
 
 export function TechHero() {
   const buttonNew = (
-    <Button asChild className="rounded-full bg-blue-500 px-6 text-white hover:bg-blue-400">
-      <a href="#contact" target="_blank" rel="noopener noreferrer">
-        Get Free Consultation
+    <Button asChild className="rounded-full bg-amber-500 px-6 text-black hover:bg-amber-400 font-medium">
+      <a href="#contact" rel="noopener noreferrer">
+        Get Free Estimate
       </a>
     </Button>
   )
@@ -16,18 +16,17 @@ export function TechHero() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center py-14 sm:py-20">
           <div className="mb-5 flex items-center gap-2">
-            <Image src="/tc-logo.png" alt="Technology Central logo" width={32} height={32} className="h-8 w-8 rounded" />
-            <p className="text-sm uppercase tracking-[0.25em] text-blue-300/80">technology central</p>
+            <Image src="/tc-logo.png" alt="CPEC Texas logo" width={32} height={32} className="h-8 w-8 rounded" />
+            <p className="text-sm uppercase tracking-[0.25em] text-amber-300/80">CounterPoint Electrical</p>
           </div>
           <h1 className="mt-3 text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
             <span className="block">FORT WORTH'S</span>
-            <span className="block text-blue-400 drop-shadow-[0_0_20px_rgba(0,191,255,0.35)]">TECHNOLOGY PARTNER</span>
-            <span className="block">FOR BUSINESS</span>
+            <span className="block text-amber-400 drop-shadow-[0_0_20px_rgba(245,158,11,0.35)]">ELECTRICAL ESTIMATING</span>
+            <span className="block">EXPERTS</span>
           </h1>
           <p className="mt-6 text-center text-lg text-gray-300 max-w-2xl mx-auto">
-            Fast support, smooth onboarding, and reliable systems that keep your team productive. 
-            From "one call and it's fixed" help desk to bulletproof email setup—we solve the tech problems 
-            that slow you down.
+            Accurate takeoffs, detailed cost estimates, and competitive bid preparation for electrical contractors. 
+            We deliver precise estimates that help you win more bids and maximize profitability on every project.
           </p>
           <div className="mt-6">{buttonNew}</div>
 
@@ -54,9 +53,9 @@ export function TechHero() {
 }
 
 function FeatureCard({
-  title = "Fast Support",
-  description = "One call and it's fixed help desk",
-  icon: IconComponent = Zap,
+  title = "Accurate Estimates",
+  description = "Detailed takeoffs and cost analysis",
+  icon: IconComponent = Calculator,
 }: {
   title?: string
   description?: string
@@ -65,13 +64,13 @@ function FeatureCard({
   return (
     <div className="relative rounded-[28px] glass-border bg-neutral-900 p-6 animate-float">
       <div className="text-center">
-        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+        <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4">
           <IconComponent className="h-6 w-6 text-white" />
         </div>
         <div className="text-xl font-bold leading-snug text-white/90 mb-2">{title}</div>
         <p className="text-sm text-white/70">{description}</p>
-        <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-3 py-1 text-xs uppercase tracking-wider text-blue-300">
-          technology central
+        <div className="mt-3 inline-flex items-center rounded-full bg-black/40 px-3 py-1 text-xs uppercase tracking-wider text-amber-300">
+          CPEC Texas
         </div>
       </div>
     </div>
@@ -80,18 +79,18 @@ function FeatureCard({
 
 const featureData = [
   {
-    title: "Fast Support & Onboarding",
-    description: "New hires set up in under a day. One call and it's fixed help desk.",
-    icon: Zap,
+    title: "Precise Takeoffs",
+    description: "Accurate material counts and labor estimates from your plans and specs.",
+    icon: Calculator,
   },
   {
-    title: "Reliable Email Setup",
-    description: "Clean cutovers to professional work email—no downtime, no bounce backs.",
-    icon: Mail,
+    title: "Professional Bids",
+    description: "Comprehensive, organized bid packages that win projects.",
+    icon: FileText,
   },
   {
-    title: "Secure Collaboration",
-    description: "Shared drives that 'just work.' Clear access rules to protect sensitive docs.",
-    icon: Shield,
+    title: "Win More Work",
+    description: "Competitive estimates that maximize your profit margins.",
+    icon: TrendingUp,
   },
 ]

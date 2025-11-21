@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react"
+import { Mail, Phone, MapPin, Linkedin, Facebook } from "lucide-react"
 
 export function TechFooter() {
   return (
@@ -9,22 +9,19 @@ export function TechFooter() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <Image src="/tc-logo.png" alt="Technology Central" width={32} height={32} className="rounded-lg" />
-              <span className="font-bold text-xl text-white">Technology Central</span>
+              <Image src="/tc-logo.png" alt="CPEC Texas" width={32} height={32} className="rounded-lg" />
+              <span className="font-bold text-xl text-white">CPEC Texas</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md text-pretty">
-              Fort Worth's leading technology partner, delivering fast support, smooth onboarding, and reliable systems 
-              that keep your team productive.
+              CounterPoint Electrical Consulting Texas - Professional electrical estimating services for contractors 
+              throughout Texas. Accurate takeoffs, competitive pricing, and fast turnaround.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Github className="h-5 w-5" />
+              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors">
+                <Facebook className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -35,11 +32,11 @@ export function TechFooter() {
             <ul className="space-y-3 text-gray-300">
               <li className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span>mike@technologycentral.net</span>
+                <span>estimates@cpectexas.com</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>(661) 714-1593</span>
+                <span>(817) 555-CPEC</span>
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
@@ -50,7 +47,7 @@ export function TechFooter() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Technology Central. All rights reserved.</p>
+          <p>&copy; 2024 CounterPoint Electrical Consulting Texas. All rights reserved.</p>
         </div>
       </div>
     </footer>
