@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <head>
-        <link rel="icon" href="/tc-logo.png" />
+        <link rel="icon" href="/images/CPEC LOGO.png" />
 
         {/* Font Preload */}
         <link

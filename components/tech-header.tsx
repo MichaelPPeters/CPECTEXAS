@@ -27,11 +27,11 @@ export function TechHeader() {
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-1.5">
             <Image
-              src="/tc-logo.png"
+              src="/images/CPEC LOGO.png"
               alt="CPEC Texas logo"
               width={20}
               height={20}
-              className="h-5 w-5 rounded"
+              className="h-5 w-5"
             />
             <span className="font-semibold tracking-wide text-white">CPEC Texas</span>
           </Link>
@@ -81,11 +81,11 @@ export function TechHeader() {
                 {/* Brand Header */}
                 <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-800">
                   <Image
-                    src="/tc-logo.png"
+                    src="/images/CPEC LOGO.png"
                     alt="CPEC Texas logo"
                     width={24}
                     height={24}
-                    className="h-6 w-6 rounded"
+                    className="h-6 w-6"
                   />
                   <span className="font-semibold tracking-wide text-white text-lg">CPEC Texas</span>
                 </div>

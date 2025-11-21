@@ -9,7 +9,7 @@ export function TechFooter() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <Image src="/tc-logo.png" alt="CPEC Texas" width={32} height={32} className="rounded-lg" />
+              <Image src="/images/CPEC LOGO.png" alt="CPEC Texas" width={32} height={32} />
               <span className="font-bold text-xl text-white">CPEC Texas</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md text-pretty">
